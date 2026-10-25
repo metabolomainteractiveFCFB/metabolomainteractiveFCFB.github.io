@@ -1,0 +1,8 @@
+:root {
+  --font-sans: "Segoe UI", Arial, sans-serif;
+  --font-display: "Segoe UI", Arial, sans-serif;
+  --font-mono: Consolas, "Courier New", monospace;
+}
+body, button, input, select, textarea, h1, h2, h3, h4, .mono, .section-label {
+  font-family: "Segoe UI", Arial, sans-serif !important;
+}

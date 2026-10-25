@@ -1,0 +1,412 @@
+/* ============================================================
+   METABOLOMA INTERACTIVO — Tema claro y clínico
+   Capa de sobrescritura sobre css/styles.css
+   ============================================================ */
+
+:root {
+  --abyss: #f4f8fb;
+  --deep: #ffffff;
+  --panel: #ffffff;
+  --panel2: #f1f6fa;
+  --raised: #e8f1f7;
+  --line: #d7e3ed;
+  --line-soft: #e7eef4;
+  --ink: #0a2538;
+  --muted: #466276;
+  --faint: #556d80;
+  --turquoise: #0a7a70;
+  --violet: #6d4fc4;
+  --amber: #a96b12;
+  --coral: #c94653;
+  --blue: #3468d4;
+  --shadow: 0 20px 50px -34px rgba(12, 45, 70, 0.3);
+  --shadow-sm: 0 1px 2px rgba(12, 45, 70, 0.06);
+}
+
+html { background: var(--abyss); }
+body {
+  background: var(--abyss);
+  color: var(--ink);
+}
+body::before {
+  background:
+    radial-gradient(900px 520px at 12% -8%, rgba(11, 143, 131, 0.09), transparent 62%),
+    radial-gradient(820px 540px at 92% 2%, rgba(109, 79, 196, 0.07), transparent 60%),
+    radial-gradient(760px 620px at 50% 108%, rgba(52, 104, 212, 0.05), transparent 65%);
+}
+::selection { background: rgba(11, 143, 131, 0.18); color: var(--ink); }
+p { color: var(--muted); }
+.page-head .lede strong { color: var(--ink); }
+
+/* Accesibilidad */
+:focus-visible { outline: 2px solid var(--turquoise); outline-offset: 2px; }
+.skip-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 300;
+  transform: translateY(-180%);
+  background: var(--ink);
+  color: #fff;
+  border-radius: 9px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 10px 24px -12px rgba(10, 37, 56, 0.55);
+  transition: transform 0.18s ease;
+}
+.skip-link:focus { transform: none; }
+#app:focus { outline: none; }
+
+/* ---------------- Cabecera ---------------- */
+.site-header {
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 8px 24px -22px rgba(10, 37, 56, 0.4);
+}
+@supports not (backdrop-filter: blur(1px)) { .site-header { background: #ffffff; } }
+.brand-mark {
+  border: 1px solid rgba(11, 143, 131, 0.28);
+  background: radial-gradient(circle at 35% 30%, rgba(11, 143, 131, 0.14), #ffffff 72%);
+  box-shadow: inset 0 0 18px rgba(11, 143, 131, 0.06), 0 4px 12px -8px rgba(10, 37, 56, 0.25);
+}
+.brand-text strong { color: var(--ink); }
+.brand-text small { color: var(--faint); }
+.main-nav button { color: var(--muted); }
+.main-nav button:hover { color: var(--ink); background: var(--panel2); }
+.main-nav button.active { color: var(--turquoise); background: rgba(11, 143, 131, 0.09); }
+.search-trigger {
+  background: #f5f9fc;
+  border-color: var(--line);
+  color: var(--faint);
+}
+.search-trigger:hover { background: #fff; border-color: #b9ccda; color: var(--muted); }
+.search-trigger kbd { background: #fff; border-color: var(--line); color: var(--faint); }
+.icon-btn { background: #f5f9fc; border-color: var(--line); color: var(--muted); }
+.icon-btn:hover { background: #fff; border-color: #b9ccda; color: var(--ink); }
+.mobile-nav { background: #ffffff; border-top-color: var(--line); }
+.mobile-nav button { color: var(--muted); }
+.mobile-nav button:hover { background: var(--panel2); color: var(--ink); }
+.mobile-nav button.active { background: rgba(11, 143, 131, 0.09); color: var(--turquoise); }
+
+/* ---------------- Migas y botones ---------------- */
+.crumb {
+  background: #ffffff;
+  border-color: var(--line);
+  color: var(--muted);
+  box-shadow: var(--shadow-sm);
+}
+.crumb:hover { color: var(--ink); border-color: #b9ccda; background: var(--panel2); }
+.crumb.current { color: var(--faint); background: transparent; border-color: transparent; box-shadow: none; }
+
+.btn {
+  background: #ffffff;
+  border-color: var(--line);
+  color: var(--muted);
+  box-shadow: var(--shadow-sm);
+}
+.btn:hover { color: var(--ink); border-color: #b9ccda; background: var(--panel2); }
+.btn.primary {
+  color: #ffffff;
+  border-color: var(--turquoise);
+  background: var(--turquoise);
+  box-shadow: 0 10px 22px -14px rgba(11, 143, 131, 0.7);
+}
+.btn.primary:hover { background: #0a7a70; border-color: #0a7a70; color: #fff; }
+.btn.coral {
+  color: #a8323e;
+  border-color: #ecc4c9;
+  background: #fff6f7;
+}
+.btn.coral:hover { background: #ffedef; border-color: #dda6ae; color: #8f2834; }
+
+/* ---------------- Etiquetas ---------------- */
+.tag { background: #ffffff; border-color: var(--line); color: var(--muted); }
+.tag.tone-coral { color: #a8323e; border-color: #ecc4c9; background: #fdf2f3; }
+.tag.tone-amber { color: #8a5a0c; border-color: #e9d5a8; background: #fdf8ec; }
+.tag.tone-violet { color: #5b3fb0; border-color: #dbd0f7; background: #f6f2ff; }
+.tag.tone-teal { color: #0a746b; border-color: #bfe8e3; background: #eefaf8; }
+.tag.tone-blue { color: #2c5ab8; border-color: #cfddf7; background: #f0f5ff; }
+.tag.tone-faint { color: var(--faint); background: #f7fafc; }
+.tag.tone-neutral { color: var(--muted); background: #f3f7fa; border-color: var(--line); }
+
+/* ---------------- Tarjetas ---------------- */
+.card {
+  background: #ffffff;
+  border-color: var(--line);
+  box-shadow: var(--shadow);
+}
+
+/* ---------------- Atlas celular ---------------- */
+.cell-card { background: #ffffff; }
+.cell-card .hint { color: var(--faint); }
+.cell-stage {
+  background-image:
+    linear-gradient(rgba(11, 143, 131, 0.075) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 143, 131, 0.075) 1px, transparent 1px);
+  background-color: #fbfdfe;
+}
+.cell-stage::after {
+  background: radial-gradient(circle at 50% 46%, transparent 42%, rgba(244, 248, 251, 0.82) 100%);
+}
+.cell-svg .organelle:hover .organelle-shape,
+.cell-svg .organelle:focus-visible .organelle-shape {
+  filter: drop-shadow(0 8px 16px rgba(11, 143, 131, 0.28));
+}
+.cell-svg .organelle.selected .organelle-shape {
+  filter: drop-shadow(0 0 16px rgba(11, 143, 131, 0.42));
+}
+.cell-tooltip {
+  background: #ffffff;
+  border-color: var(--line);
+  color: var(--ink);
+  box-shadow: 0 10px 26px -14px rgba(10, 37, 56, 0.45);
+}
+.organelle-pills { background: #fbfdfe; border-top-color: var(--line-soft); }
+.org-pill { background: #ffffff; border-color: var(--line); color: var(--muted); }
+.org-pill:hover { color: var(--ink); border-color: #b9ccda; background: var(--panel2); }
+.org-pill.active { color: var(--ink); border-color: rgba(11, 143, 131, 0.45); background: rgba(11, 143, 131, 0.08); }
+.org-pill .count { color: var(--faint); }
+
+.context-panel .panel-head { border-bottom-color: var(--line-soft); }
+.org-identity p, .context-panel .desc { color: var(--muted); }
+.panel-subhead { color: var(--faint); }
+.check-list .icon { color: var(--turquoise); }
+.mini-path { background: #f8fbfd; border-color: var(--line); }
+.mini-path:hover { border-color: #b9ccda; background: #ffffff; }
+.mini-path .icon { color: var(--turquoise); }
+.disease-chip { background: #fdf3f4; border-color: #ecc4c9; color: #a8323e; }
+.disease-chip:hover { background: #fbe8ea; border-color: #dda6ae; }
+.context-empty { border-color: #c9d9e5; color: var(--faint); background: #fbfdfe; }
+
+/* ---------------- Estadísticas del atlas ---------------- */
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: 780px;
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.hero-stats > div {
+  padding: 14px 18px 13px;
+  border-right: 1px solid var(--line-soft);
+  border-top: 2px solid transparent;
+}
+.hero-stats > div:first-child { border-top-color: var(--turquoise); }
+.hero-stats > div:nth-child(2) { border-top-color: var(--violet); }
+.hero-stats > div:nth-child(3) { border-top-color: var(--coral); }
+.hero-stats > div:nth-child(4) { border-top-color: var(--amber); }
+.hero-stats > div:last-child { border-right: 0; }
+.hero-stats strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+.hero-stats span {
+  display: block;
+  margin-top: 3px;
+  font-family: var(--font-mono);
+  font-size: 8.8px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--faint);
+  line-height: 1.4;
+}
+
+/* ---------------- Pasos ---------------- */
+.steps-card { background: #ffffff; }
+.step-num {
+  border-color: rgba(11, 143, 131, 0.32);
+  background: rgba(11, 143, 131, 0.07);
+  color: var(--turquoise);
+}
+.step p { color: var(--muted); }
+.step p strong { color: var(--ink); }
+.steps-doc { border-top-color: var(--line-soft); color: var(--turquoise); }
+.steps-doc:hover { color: #0a7a70; }
+
+/* ---------------- Listado de rutas ---------------- */
+.group-head h2 { color: var(--ink); }
+.group-head .more { color: var(--faint); }
+.group-head .more:hover { color: var(--turquoise); }
+.pathway-card:hover,
+.disease-card:hover {
+  border-color: #b9ccda;
+  box-shadow: 0 24px 46px -30px rgba(10, 37, 56, 0.35);
+}
+.pathway-card.context-card { background: #fbfdfe; }
+.pc-open { color: var(--turquoise); }
+.pc-meta { color: var(--faint); }
+
+/* ---------------- Diagrama de ruta ---------------- */
+.quick-paths { flex-wrap: wrap; overflow: visible; padding-bottom: 0; }
+.quick-path { background: #ffffff; border-color: var(--line); color: var(--muted); }
+.quick-path:hover { color: var(--ink); border-color: #b9ccda; background: var(--panel2); }
+.quick-path.active { color: #086e65; border-color: rgba(11, 143, 131, 0.42); background: rgba(11, 143, 131, 0.08); }
+@media (max-width: 900px) {
+  .quick-paths { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin; }
+}
+.map-shell {
+  background:
+    radial-gradient(circle at 50% 30%, rgba(11, 143, 131, 0.05), transparent 62%),
+    linear-gradient(180deg, #ffffff, #f8fbfd);
+  border-color: var(--line);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), var(--shadow);
+}
+.map-hint-card { background: rgba(255, 255, 255, 0.94); border-color: var(--line); color: var(--faint); }
+.map-controls button { background: #ffffff; border-color: var(--line); color: var(--muted); box-shadow: var(--shadow-sm); }
+.map-controls button:hover { color: var(--ink); border-color: #b9ccda; background: var(--panel2); }
+.map-node:hover rect, .map-node:hover path { filter: drop-shadow(0 4px 8px rgba(11, 143, 131, 0.22)); }
+.map-node.active rect { filter: drop-shadow(0 5px 10px rgba(11, 143, 131, 0.35)); }
+.note-box { border-color: #c3e8e3; background: #f2fbfa; color: var(--muted); }
+.note-box .icon { color: var(--turquoise); }
+.inspector { background: #ffffff; border-color: var(--line); box-shadow: var(--shadow); }
+.inspector .inspector-foot { border-top-color: var(--line-soft); }
+.inspector .empty { color: var(--faint); }
+.legend-swatch { border-color: var(--line); }
+.sw-metabolite { background: #e8faf7; border-color: #7acfc4; }
+.sw-enzyme { background: #f1ecfd; border-color: #a58fe0; }
+.sw-block { background: #fceef0; border-color: #d98a94; }
+.sw-accumulate { background: #fcf5e3; border-color: #d4ad5a; }
+.sw-context { background: #f1f6fa; border-color: #a9bccb; }
+.legend-note { border-top-color: var(--line-soft); color: var(--faint); }
+.detail-card .actions .btn { background: #fff; }
+
+/* ---------------- Explorador ---------------- */
+.filters-card { background: #ffffff; }
+.filter-search { background: #f8fbfd; border-color: var(--line); }
+.filter-search input::placeholder { color: var(--faint); }
+.select-wrap select { background: #ffffff; border-color: var(--line); color: var(--ink); }
+.select-wrap select:hover { border-color: #b9ccda; }
+.select-wrap select:focus { border-color: rgba(11, 143, 131, 0.6); box-shadow: 0 0 0 3px rgba(11, 143, 131, 0.1); }
+.results-bar .clear { color: var(--turquoise); }
+.disease-card { background: #ffffff; }
+.dc-path { color: var(--faint); }
+.dc-path .icon { color: var(--faint); }
+.empty-state .icon { color: #9db3c3; }
+
+/* ---------------- Ficha de enfermedad ---------------- */
+.aka { color: var(--faint); }
+.aka strong { color: var(--muted); }
+.acc-head:hover { background: #fbfdfe; }
+.acc-icon {
+  background: #eefaf8;
+  border-color: #c3e8e3;
+  color: var(--turquoise);
+}
+.acc-icon.violet { background: #f5f1ff; border-color: #dbd0f7; color: var(--violet); }
+.acc-icon.coral { background: #fdf2f3; border-color: #ecc4c9; color: var(--coral); }
+.acc-icon.amber { background: #fdf8ec; border-color: #e9d5a8; color: var(--amber); }
+.acc-content { border-top-color: var(--line-soft); }
+.acc-block h3 { color: var(--faint); }
+.acc-block ul li { color: var(--muted); }
+.warning {
+  border-color: #e9d5a8;
+  background: #fdf8ec;
+}
+.warning .icon { color: var(--amber); }
+.warning p { color: #77571c; }
+.source { background: #fbfdfe; border-color: var(--line); }
+.source .src-badge { color: var(--turquoise); border-color: #bfe8e3; background: #f2fbfa; }
+.source .src-ref { color: var(--faint); }
+.id-row strong.mono { color: var(--turquoise); }
+.validation-card {
+  border-color: #e9d5a8;
+  background: linear-gradient(180deg, #fdf8ec, #ffffff);
+}
+.validation-card h3 { color: var(--amber); }
+.validation-card li { color: #77571c; }
+.side-disclaimer { color: var(--faint); }
+
+/* ---------------- Pie ---------------- */
+.site-footer {
+  border-top-color: var(--line);
+  background: #eef5f8;
+}
+.footer-brand p, .footer-note, .footer-links a { color: var(--faint); }
+.footer-links a:hover { color: var(--turquoise); }
+
+/* ---------------- Documentación ---------------- */
+.doc-quick {
+  border-color: #c3e8e3;
+  background: linear-gradient(135deg, #f1fbf9, #f6f3ff);
+}
+.doc-quick > .section-label { color: var(--turquoise); }
+.doc-toc-link { color: var(--muted); }
+.doc-toc-link:hover { color: var(--ink); background: rgba(11, 143, 131, 0.05); }
+.doc-toc-link.active { color: var(--ink); background: rgba(11, 143, 131, 0.09); border-color: #c3e8e3; }
+.doc-toc-link.active span { color: var(--turquoise); }
+.doc-toc-foot { border-top-color: var(--line-soft); }
+.doc-section { border-bottom-color: var(--line-soft); }
+.doc-num { color: var(--turquoise); border-color: #c3e8e3; background: #f2fbfa; }
+.doc-prose a { color: var(--turquoise); }
+.doc-prose code, .doc-routes code {
+  color: #0a675f;
+  background: #f0faf8;
+  border-color: #c3e8e3;
+}
+.doc-prose kbd { color: var(--ink); background: #ffffff; border-color: var(--line); }
+.doc-callout {
+  border-color: #c3e8e3;
+  border-left-color: var(--turquoise);
+  background: #f5fcfb;
+}
+.doc-facts > div { background: #fbfdfe; border-color: var(--line); }
+.doc-table-wrap { background: #ffffff; border-color: var(--line); }
+.doc-table th, .doc-table td { border-bottom-color: var(--line-soft); }
+.doc-table th { background: #f3f8fb; color: var(--faint); }
+.doc-table td code { color: #0a675f; }
+.doc-ref-card { background: #fbfdfe; border-color: var(--line); }
+.doc-ref-card .src-badge { color: var(--turquoise); border-color: #c3e8e3; background: #f2fbfa; }
+.doc-pass { color: #0a746b; background: #eefaf8; border-color: #bfe8e3; }
+.doc-shots figure { background: #f8fbfd; border-color: var(--line); }
+.doc-shots figcaption { border-top-color: var(--line-soft); color: var(--faint); }
+.doc-end {
+  border-color: var(--line);
+  background: linear-gradient(180deg, #f8fbfd, #ffffff);
+}
+
+/* ---------------- Búsqueda ---------------- */
+.search-overlay { background: rgba(8, 30, 48, 0.38); }
+.search-modal {
+  background: #ffffff;
+  border-color: var(--line);
+  box-shadow: 0 40px 90px -30px rgba(10, 37, 56, 0.55);
+}
+.search-field { border-bottom-color: var(--line); }
+.search-field input { color: var(--ink); }
+.search-field input::placeholder { color: var(--faint); }
+.search-result:hover, .search-result.selected { background: rgba(11, 143, 131, 0.08); }
+.search-result .sr-icon {
+  background: #eefaf8;
+  color: var(--turquoise);
+  border-color: #c3e8e3;
+}
+.search-result .sr-sub { color: var(--faint); }
+.search-foot { border-top-color: var(--line-soft); color: var(--faint); }
+.search-empty { color: var(--faint); }
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 720px) {
+  .hero-stats { grid-template-columns: 1fr 1fr; }
+  .hero-stats > div { border-right: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
+  .hero-stats > div:nth-child(2n) { border-right: 0; }
+  .hero-stats > div:nth-child(n + 3) { border-bottom: 0; }
+}
+@media (max-width: 640px) {
+  .hero-stats strong { font-size: 23px; }
+  .hero-stats > div { padding: 12px 14px; }
+  .hero-stats span { font-size: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skip-link { transition: none; }
+}

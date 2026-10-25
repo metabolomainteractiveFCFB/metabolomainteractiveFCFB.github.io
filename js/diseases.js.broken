@@ -1,0 +1,15 @@
+﻿/* ============================================================
+   ATLAS METABOLICO -- Fichas de enfermedades
+   ============================================================ */
+
+const DISEASES = [
+];
+
+const DISEASE_BY_ID = Object.fromEntries(DISEASES.map((d) => [d.id, d]));
+
+const INHERITANCE_TONE = {
+  "Autosómica recesiva": "violet",
+  "Ligada al X": "violet",
+  "Heterogénea (mitocondrial o nuclear)": "violet",
+  "Ligada al X (PDHA1)": "violet"
+};
