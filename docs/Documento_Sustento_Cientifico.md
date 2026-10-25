@@ -7,7 +7,7 @@
 - **Idioma:** español.
 - **Público principal:** estudiantes de pregrado de Medicina, Bioquímica, Nutrición, Farmacia y Biología.
 - **Público secundario:** docentes, profesionales de la salud y divulgadores científicos.
-- **Alcance:** 8 organelos, 20 rutas metabólicas, 40 enfermedades y 120 referencias específicas.
+- **Alcance:** 8 organelos, 20 rutas metabólicas y 40 enfermedades.
 - **Tecnologías:** HTML5, CSS3 y JavaScript sin framework, sin compilación y sin backend.
 - **Versión y fecha:** 1.3 · octubre de 2026.
 - **Carácter:** recurso educativo; no es un dispositivo médico ni sustituye la valoración clínica.
@@ -374,7 +374,7 @@ El manual completo está disponible en `#/manual` y en `docs/Manual_de_Uso.md`. 
 - **Datos estáticos:** la información se actualiza manualmente; no existe una base de datos ni una API que sincronice cambios.
 - **Idioma:** el contenido está en español y no se ha validado en otros idiomas.
 - **Accesibilidad:** se cuidaron el contraste, el foco y las etiquetas, pero falta una auditoría formal con lectores de pantalla y pruebas con usuarios.
-- **Dependencia de fuentes externas:** las tipografías se cargan desde Google Fonts; sin conexión se usan las fuentes de respaldo del sistema.
+- **Dependencia de la conexión:** la versión publicada requiere internet; las tipografías y los recursos visuales se sirven localmente, sin depender de Google Fonts.
 - **Validación experta pendiente:** antes de un uso docente formal, el contenido debe ser revisado por un bioquímico clínico o genetista metabólico.
 
 ### Trabajo futuro

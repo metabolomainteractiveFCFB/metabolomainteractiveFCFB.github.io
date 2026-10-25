@@ -307,11 +307,11 @@ function renderAtlas() {
         <span class="eyebrow">${icon("atlas")} Vista principal</span>
         <h1 class="hero-title">${SITE_NAME} : <span class="hero-title-sub">Cartografía de los Errores Innatos del Metabolismo</span></h1>
         <p class="lede">Un atlas dinámico e interactivo organizado por <strong>organelos</strong>. Explora la célula, abre una vía metabólica y consulta las <strong>enzimas mutadas</strong>, los <strong>biomarcadores de diagnóstico</strong> en sangre u orina y el <strong>tratamiento metabólico o dietario</strong>.</p>
-        <div class="hero-stats" aria-label="Alcance del atlas">
+        <div class="hero-stats" aria-label="Alcance del recurso">
           <div><strong>${ORGANELLES.length}</strong><span>organelos</span></div>
           <div><strong>${PATHWAYS.length}</strong><span>rutas metabólicas</span></div>
           <div><strong>${DISEASES.length}</strong><span>enfermedades con ficha</span></div>
-          <div><strong>${DISEASES.reduce((n, d) => n + d.sources.length, 0)}</strong><span>referencias citadas</span></div>
+          <div><strong>${QUIZ_TOTAL}</strong><span>preguntas interactivas</span></div>
         </div>
         <div class="hero-cta">
           <a class="btn primary" href="#/quiz">${icon("quiz")} Quiz por rutas</a>

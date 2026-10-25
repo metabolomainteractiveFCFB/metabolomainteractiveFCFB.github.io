@@ -36,7 +36,7 @@ const SUPPORT_SECTIONS = [
         <div><strong>${ORGANELLES.length}</strong><span>organelos representados</span></div>
         <div><strong>${PATHWAYS.length}</strong><span>rutas metabólicas</span></div>
         <div><strong>${DISEASES.length}</strong><span>enfermedades con ficha</span></div>
-        <div><strong>${DISEASES.reduce((n, d) => n + d.sources.length, 0)}</strong><span>referencias específicas</span></div>
+        <div><strong>${SUPPORT_SECTIONS.length}</strong><span>apartados</span></div>
       </div>
       <div class="doc-table-wrap">
         <table class="doc-table">
@@ -45,7 +45,7 @@ const SUPPORT_SECTIONS = [
             <tr><th>Idioma</th><td>Español</td></tr>
             <tr><th>Público principal</th><td>Estudiantes de pregrado de Medicina, Bioquímica, Nutrición, Farmacia y Biología</td></tr>
             <tr><th>Público secundario</th><td>Docentes, profesionales de la salud y divulgadores científicos</td></tr>
-            <tr><th>Alcance</th><td>${ORGANELLES.length} organelos, ${PATHWAYS.length} rutas, ${DISEASES.length} enfermedades y ${DISEASES.reduce((n, d) => n + d.sources.length, 0)} referencias específicas</td></tr>
+            <tr><th>Alcance</th><td>${ORGANELLES.length} organelos, ${PATHWAYS.length} rutas y ${DISEASES.length} enfermedades</td></tr>
             <tr><th>Tecnologías</th><td>HTML5, CSS3 y JavaScript sin framework, sin proceso de compilación y sin backend</td></tr>
             <tr><th>Versión y fecha</th><td>${DOC_VERSION} · ${DOC_DATE}</td></tr>
             <tr><th>Carácter</th><td>Recurso educativo; no es un dispositivo médico ni sustituye la valoración clínica</td></tr>
@@ -302,7 +302,7 @@ const SUPPORT_SECTIONS = [
       </div>
       <h3>Observaciones de la validación</h3>
       <ul>
-        <li>Las pruebas se ejecutaron con datos locales y sin conexión a servicios externos, salvo la carga de tipografías.</li>
+        <li>Las pruebas se ejecutaron con datos locales y sin conexión a servicios externos.</li>
         <li>La comprobación en 1440, 1024, 800 y 500 px confirma la reorganización; queda pendiente una auditoría con lector de pantalla y una prueba en dispositivos móviles reales.</li>
         <li>No se encontraron errores de JavaScript en la consola durante los recorridos principales, incluida la validación de las ${QUIZ_ROUTE_META.length} rutas y el recorrido completo de un quiz de ${QUIZ_PER_ROUTE} preguntas.</li>
         <li>Las capturas corresponden al entorno de prueba y pueden variar ligeramente respecto de la versión final.</li>
@@ -356,7 +356,7 @@ const SUPPORT_SECTIONS = [
         <li><strong>Datos estáticos:</strong> la información se actualiza manualmente; no existe una base de datos ni una API que sincronice cambios.</li>
         <li><strong>Idioma:</strong> el contenido está en español y no se ha validado en otros idiomas.</li>
         <li><strong>Accesibilidad:</strong> se cuidaron el contraste, el foco y las etiquetas, pero falta una auditoría formal con lectores de pantalla y pruebas con usuarios.</li>
-        <li><strong>Dependencia de fuentes externas:</strong> las tipografías se cargan desde Google Fonts; sin conexión se usan las fuentes de respaldo del sistema.</li>
+        <li><strong>Dependencia de la conexión:</strong> la versión publicada requiere internet; las tipografías y los recursos visuales se sirven localmente, sin depender de Google Fonts.</li>
         <li><strong>Validación experta pendiente:</strong> antes de un uso docente formal, el contenido debe ser revisado por un bioquímico clínico o genetista metabólico.</li>
       </ul>
       <h3>Trabajo futuro</h3>
@@ -409,7 +409,7 @@ const MANUAL_SECTIONS = [
           <h3>Lo que necesitas</h3>
           <ul>
             <li>Un navegador actualizado.</li>
-            <li>Conexión a internet si quieres cargar las tipografías de Google; sin conexión se usan las fuentes de respaldo.</li>
+            <li>Conexión a internet para abrir la versión publicada; las tipografías se sirven localmente.</li>
             <li>Nociones básicas de bioquímica para aprovechar al máximo las fichas.</li>
           </ul>
         </div>
@@ -660,7 +660,7 @@ const MANUAL_SECTIONS = [
           <tbody>
             <tr><td>La página aparece en blanco</td><td>Confirma que abriste <code>index.html</code> desde la carpeta completa del proyecto y que los archivos <code>js/</code> y <code>css/</code> están presentes. Si usas un servidor, revisa la ruta.</td></tr>
             <tr><td>Los estilos o iconos no cargan</td><td>Actualiza con <kbd>Ctrl</kbd> + <kbd>F5</kbd> y verifica que <code>css/styles.css</code> y el sprite SVG estén disponibles.</td></tr>
-            <tr><td>Las tipografías se ven distintas</td><td>Sin conexión, el navegador usa fuentes de respaldo. No afecta el contenido ni la navegación.</td></tr>
+            <tr><td>Las tipografías se ven distintas</td><td>Comprueba que los archivos WOFF2 locales estén disponibles; si no, el navegador usa las fuentes de respaldo. No afecta el contenido ni la navegación.</td></tr>
             <tr><td>El diagrama se ve pequeño</td><td>Usa los botones de zoom o arrastra el lienzo. En pantallas estrechas, el diagrama está pensado para explorarse.</td></tr>
             <tr><td>No encuentro una enfermedad</td><td>Prueba con el gen, un sinónimo o un biomarcador. También puedes limpiar los filtros del explorador.</td></tr>
             <tr><td>El botón de imprimir no responde</td><td>Algunos navegadores bloquean la impresión desde páginas locales; abre el sitio desde un servidor estático o usa el menú del navegador.</td></tr>

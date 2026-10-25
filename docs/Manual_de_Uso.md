@@ -16,7 +16,7 @@ El atlas funciona en navegadores modernos de escritorio o móvil (Chrome, Edge, 
 **Lo que necesitas**
 
 - Un navegador actualizado.
-- Conexión a internet si quieres cargar las tipografías de Google; sin conexión se usan las fuentes de respaldo.
+- Conexión a internet para abrir la versión publicada; las tipografías se sirven localmente.
 - Nociones básicas de bioquímica para aprovechar al máximo las fichas.
 
 **Lo que no necesitas**
